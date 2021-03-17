@@ -15,8 +15,8 @@ class HTTPConnection:
         self.url = "https://{0}.wikipedia.org/wiki/{1}".format(self.langue, page.replace(' ', '_'))
 
         response, content = h.request(self.url, "GET")
-        codage= response['content-type'].split('=')[1]
-        print(s)
+        codage = response['content-type'].split('=')[1]
+        # print(s)
 
         # cles = ['content-location','age','status','last-modified']
         # res = {

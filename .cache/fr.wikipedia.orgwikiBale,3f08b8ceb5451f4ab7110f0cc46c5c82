@@ -8,8 +8,8 @@ vary: Accept-Encoding,Cookie,Authorization
 x-request-id: YE8wFc3iafQFHzx6X9nLhAAAAQc
 last-modified: Sat, 13 Mar 2021 13:21:18 GMT
 content-type: text/html; charset=UTF-8
-age: 1941
-x-cache: cp3052 miss, cp3064 hit/7
+age: 6980
+x-cache: cp3052 hit, cp3052 hit/2
 x-cache-status: hit-front
 server-timing: cache;desc="hit-front"
 strict-transport-security: max-age=106384710; includeSubDomains; preload
