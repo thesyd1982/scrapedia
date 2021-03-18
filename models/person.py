@@ -1,6 +1,5 @@
-from abc import ABC, abstractmethod
+from abc import ABC
 from models.address import Address
-
 
 class Person(ABC):
     def __init__(self, fname='fname', lname='lname', email='email@exemple.fr', addr=Address(), tel='0476900900'):
@@ -17,6 +16,6 @@ class Person(ABC):
 
 
 if __name__ == "__main__":
-    a = Address("12")
-    p = Person("douakha", "salah", "salah.yacine.douakha@gmail.com", a)
-    print(p)
+    pass
+
+
