@@ -1,19 +1,22 @@
 from abc import ABC
-from models.address import Address
 
 class Person(ABC):
-    def __init__(self, fname='fname', lname='lname', email='email@exemple.fr', addr=Address(), tel='0476900900'):
+    def __init__(self, fname, lname,address=None, email=None,  phone=None):
         self.fname = fname
         self.lname = lname
         self.email = email
-        self.address = addr
-        self.tel = tel
+        self.address = address
+        self.phone = phone
+        self.id_person = None
 
     def __str__(self):
-        return "Person('{}' '{}' '{}' '{}' '{}')".format(
-            self.fname, self.lname, self.email, self.address, self.tel
-        )
-
+        return f'\nPerson' \
+               f'\n  id_person: {self.id_person}' \
+               f'\n  fist name: {self.fname}' \
+               f'\n  last name: {self.lname}' \
+               f'\n  email: {self.email}' \
+               f'\n  phone: {self.phone}'\
+               f'{self.address}'
 
 if __name__ == "__main__":
     pass
