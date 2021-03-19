@@ -3,7 +3,7 @@ from models.vat import Vat
 
 
 class Product:
-    def __init__(self, reference, gencode, name, price, category, packaging, description):
+    def __init__(self, reference, name, price, packaging, category, vat, description=None, gencode=None):
         self.reference = reference
         self.gencode = gencode
         self.name = name
@@ -30,8 +30,9 @@ class Product:
     def get_category(self):
         return self.category
 
+
 if __name__ == "__main__":
-    cat_alim = Category('Fruits', Vat.TAUX_REDUIT)
-    banana = Product("16Xb51", "1234567891234", "Banane plantin", 1, cat_alim, "sachet de 500g", "c'est de la bombe")
+    cat = Category('Fruits', Vat.TAUX_REDUIT)
+    banana = Product("16Xb51", "Banane plantin", 10, "sachet de 500g", cat, "c'est de la bombe", Vat.TAUX_REDUIT)
     print(banana)
     print(cat_alim)
