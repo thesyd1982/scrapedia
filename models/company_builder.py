@@ -1,6 +1,7 @@
 from models.address import Address
 from models.copany import Company
 
+
 class CompanyBuilder:
     def __init__(self):
         self.__company = Company()

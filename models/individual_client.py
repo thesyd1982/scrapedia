@@ -18,11 +18,11 @@ class IndividualClient(Client, Individual):
 
 if __name__ == "__main__":
     adresse = AddressBuilder().build()
-    fname = "Douakha"
-    lname = "salah"
-    phone = "0606060606"
-    email = "salah.yacin.douakha@gmail.com"
-    contact = Individual(fname, lname, adresse)
+    fn = "Douakha"
+    ln = "salah"
+    tel = "0606060606"
+    mail = "salah.yacin.douakha@gmail.com"
+    contact = Individual(fn, ln, adresse)
 
-    mcdonald = IndividualClient( fname, lname,adresse, email, phone)
+    mcdonald = IndividualClient(fn, ln,adresse, mail, tel)
     print(mcdonald)

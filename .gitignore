@@ -2,3 +2,4 @@
 .idea
 .vscode
 models/__pycache__/
+venv

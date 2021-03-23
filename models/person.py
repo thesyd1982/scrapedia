@@ -1,7 +1,8 @@
 from abc import ABC
 
+
 class Person(ABC):
-    def __init__(self, fname, lname,address=None, email=None,  phone=None):
+    def __init__(self, fname, lname, address=None, email=None, phone=None):
         self.fname = fname
         self.lname = lname
         self.email = email
@@ -15,10 +16,9 @@ class Person(ABC):
                f'\n  fist name: {self.fname}' \
                f'\n  last name: {self.lname}' \
                f'\n  email: {self.email}' \
-               f'\n  phone: {self.phone}'\
+               f'\n  phone: {self.phone}' \
                f'{self.address}'
+
 
 if __name__ == "__main__":
     pass
-
-

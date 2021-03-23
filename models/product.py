@@ -11,6 +11,7 @@ class Product:
         self.category = category
         self.packaging = packaging
         self.description = description
+        self.vat = vat
         category.add_product(self)
 
     def __str__(self):
@@ -21,6 +22,7 @@ class Product:
                f'\n price: {self.price}€' \
                f'\n description: {self.description}' \
                f'\n packaging: {self.packaging}' \
+               f'\n taux: {self.vat.value * 100}%'
 
     def set_category(self, category):
         category.add_product(self)
@@ -35,4 +37,4 @@ if __name__ == "__main__":
     cat = Category('Fruits', Vat.TAUX_REDUIT)
     banana = Product("16Xb51", "Banane plantin", 10, "sachet de 500g", cat, "c'est de la bombe", Vat.TAUX_REDUIT)
     print(banana)
-    print(cat_alim)
+    print(cat)
