@@ -1,8 +1,8 @@
-from models.address import Address
+from core.model import Model
 from models.copany import Company
 
 
-class CompanyBuilder:
+class CompanyBuilder(Model):
     def __init__(self):
         self.__company = Company()
 

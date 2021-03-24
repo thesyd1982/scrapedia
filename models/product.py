@@ -1,8 +1,10 @@
 from models.category import Category
 from models.vat import Vat
+from core.model import Model
 
 
-class Product:
+class Product(Model):
+
     def __init__(self, reference, name, price, packaging, category, vat, description=None, gencode=None):
         self.reference = reference
         self.gencode = gencode

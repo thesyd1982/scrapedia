@@ -1,4 +1,7 @@
-class Invoice:
+from core.model import Model
+
+
+class Invoice(Model):
     def __init__(self, company, client):
         self.invoice_lines = []
         self.company = company
@@ -21,7 +24,6 @@ if __name__ == '__main__':
     from models.individual import Individual
     from models.individual_client import IndividualClient
     from models.address_builder import AddressBuilder
-
 
     cat = Category('Fruits', Vat.TAUX_REDUIT)
 

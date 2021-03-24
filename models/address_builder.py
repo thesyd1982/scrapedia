@@ -1,9 +1,11 @@
 from models.address import Address
+from utils.default_formater import DefaultFormater
 
 
 class AddressBuilder:
     def __init__(self):
         self.__address = Address()
+       # self.__address.set_formating(DefaultFormater())
 
     def get_numero(self):
         return self.__address.numero

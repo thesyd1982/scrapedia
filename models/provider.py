@@ -1,4 +1,7 @@
-class Provider:
+from core.model import Model
+
+
+class Provider(Model):
     def __init__(self, name):
         self.__name = name
 

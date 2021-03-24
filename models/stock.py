@@ -1,9 +1,10 @@
 from models.category import Category
 from models.product import Product
 from models.vat import Vat
+from core.model import Model
 
 
-class Stock:
+class Stock(Model):
 
     def __init__(self):
         self.lignes_stock = {}

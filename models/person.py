@@ -1,7 +1,9 @@
 from abc import ABC
+from core.model import Model
 
 
-class Person(ABC):
+class Person(Model, ABC ):
+
     def __init__(self, fname, lname, address=None, email=None, phone=None):
         self.fname = fname
         self.lname = lname

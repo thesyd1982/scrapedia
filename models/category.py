@@ -1,7 +1,9 @@
-class Category:
+from core.model import Model
+
+
+class Category(Model):
 
     def __init__(self, name, description):
-
         self.name = name
         self.description = description
         self.products = []
@@ -21,7 +23,8 @@ class Category:
     def display_products(self):
         liste = ''
         for p in self.products:
-            liste = liste + p.reference+','
+            liste = liste + p.reference + ','
         liste = liste.strip(',')
         return liste
+
     pass
