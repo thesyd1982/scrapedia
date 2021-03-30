@@ -1,0 +1,23 @@
+societe +
+fournisseur +
+
+client +
+
+produit 20% , 5% +
+category +
+
+category_tva
+facture
+n facturtaion
+client Siret
+societe
+ligne_de_fatcurations , produit ,prixHtUnite ,quantite, Prouit.category.tva
+ligne_de_facturation =( 1 ,  Frite ,3, 2 , carton, 5)
+No Ligne =(2, Pneu ,3 , 2, prieces, 20)
+Sous-total :
+ Total Tva 20 : 5.62
+ Total Tva 5 :
+Total :6.74
+Solde Dû :6.74
+
+Notes
