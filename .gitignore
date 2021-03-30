@@ -1,6 +1,4 @@
 .cache
 .idea
 .vscode
-models/__pycache__/
-core/__pycache__/
-utils/__pycache__/
+*/__pycache__/
