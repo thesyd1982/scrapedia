@@ -2,8 +2,9 @@ from abc import ABC, abstractmethod
 from core.model import Model
 
 
-class Client(Model,ABC):
+class Client(ABC, Model):
     def __init__(self):
+        Model.__init__(self)
         self.id_client = None
 
     def __str__(self):
@@ -12,4 +13,4 @@ class Client(Model,ABC):
 
     @abstractmethod
     def order(self):
-        ...
+        pass

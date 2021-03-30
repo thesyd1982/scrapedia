@@ -1,8 +1,10 @@
 from core.model import Model
+from utils.formater.formatings.oneline_formating import OnelineFormating
 
 
 class Invoice(Model):
     def __init__(self, company, client):
+        super().__init__()
         self.invoice_lines = []
         self.company = company
         self.client = client
@@ -12,6 +14,8 @@ class Invoice(Model):
 
     def remove_line(self, line):
         self.invoice_lines.remove(line)
+
+
 
 
 pass
@@ -25,11 +29,13 @@ if __name__ == '__main__':
     from models.individual_client import IndividualClient
     from models.address_builder import AddressBuilder
 
-    cat = Category('Fruits', Vat.TAUX_REDUIT)
+    cat = Category('Fruits', 'Ce que les arbres donne')
+    banana = Product("16Xb51", "Banane plantin", 10, "sachet de 500g", cat, Vat.TAUX_REDUIT.value, "c'est de la bombe")
+    banana.set_formating(OnelineFormating(['category'], False))
+    cat.set_formating(OnelineFormating(['products']))
 
-    banana = Product("16Xb51", "Banane plantin", 10, "sachet de 500g", cat, Vat.TAUX_REDUIT, "c'est de la bombe")
+    il = InvoiceLine(banana, 2, 0.5).set_formating(OnelineFormating())
 
-    il = InvoiceLine(banana, 2, 0.5)
     print(il)
 
     adresse = AddressBuilder().build()
@@ -42,4 +48,5 @@ if __name__ == '__main__':
     mcdonald = IndividualClient(fn, ln, adresse, mail, tel)
 
     i = Invoice(mcdonald, contact)
+    i.add_line(il.set_formating(OnelineFormating()))
     print(i)

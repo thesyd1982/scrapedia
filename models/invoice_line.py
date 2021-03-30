@@ -1,8 +1,15 @@
-class InvoiceLine:
+from core.model import Model
+from utils.formater.formatings.oneline_formating import OnelineFormating
+from utils.formater.formatings.default_formating import DefaultFormating
+
+
+class InvoiceLine(Model):
     def __init__(self, product, qty, promotion=0):
+        super().__init__()
         self.product = product
         self.qty = qty
         self.price_ht = self.product.price * (1 - promotion)
+
         # if self.price_ht is None:
         #     self.price_ht = self.product.price*
         # else:
@@ -40,8 +47,11 @@ if __name__ == '__main__':
     from models.vat import Vat
     from models.product import Product
 
-    cat = Category('Fruits', Vat.TAUX_REDUIT)
-    banana = Product("16Xb51", "Banane plantin", 10, "sachet de 500g", cat, Vat.TAUX_REDUIT,"c'est de la bombe")
+    cat = Category('Fruits', 'Ce que les arbres donne')
+    banana = Product("16Xb51", "Banane plantin", 10, "sachet de 500g", cat, Vat.TAUX_REDUIT.value, "c'est de la bombe")
+    banana.set_formating(OnelineFormating(['category'], False))
+    cat.set_formating(OnelineFormating(['products']))
 
-    il = InvoiceLine(banana, 2, 0.5)
+    il = InvoiceLine(banana, 2, 0.5).set_formating(OnelineFormating())
+
     print(il)

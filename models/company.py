@@ -1,10 +1,12 @@
 from address import Address
+from core.model import Model
 from models.individual import Individual
 
 
-class Company:
+class Company(Model):
 
     def __init__(self, siret, name, address, contact=None):
+        super().__init__()
         self.address = address
         self.name = name
         self.siret = siret

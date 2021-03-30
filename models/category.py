@@ -4,6 +4,7 @@ from core.model import Model
 class Category(Model):
 
     def __init__(self, name, description):
+        super().__init__()
         self.name = name
         self.description = description
         self.products = []

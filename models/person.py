@@ -2,24 +2,17 @@ from abc import ABC
 from core.model import Model
 
 
-class Person(Model, ABC ):
+class Person(ABC, Model):
 
     def __init__(self, fname, lname, address=None, email=None, phone=None):
+        super().__init__()
         self.fname = fname
         self.lname = lname
         self.email = email
         self.address = address
         self.phone = phone
-        self.id_person = None
+        # self.id_person = None
 
-    def __str__(self):
-        return f'\nPerson' \
-               f'\n  id_person: {self.id_person}' \
-               f'\n  fist name: {self.fname}' \
-               f'\n  last name: {self.lname}' \
-               f'\n  email: {self.email}' \
-               f'\n  phone: {self.phone}' \
-               f'{self.address}'
 
 
 if __name__ == "__main__":

@@ -6,6 +6,7 @@ from core.model import Model
 class Product(Model):
 
     def __init__(self, reference, name, price, packaging, category, vat, description=None, gencode=None):
+        super().__init__()
         self.reference = reference
         self.gencode = gencode
         self.name = name

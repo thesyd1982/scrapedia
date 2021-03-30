@@ -1,5 +1,5 @@
 from core.model import Model
-from models.copany import Company
+from models.company import Company
 
 
 class CompanyBuilder(Model):
