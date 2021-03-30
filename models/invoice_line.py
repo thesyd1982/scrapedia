@@ -32,15 +32,6 @@ class InvoiceLine(Model):
     def get_line_price_ht(self):
         return self.price_ht * self.qty
 
-    def __str__(self):
-        return f'InvoiceLine:\n name:{self.product.name}' \
-               f'\n reference: {self.product.reference}' \
-               f'\n price_ht: {self.price_ht}' \
-               f'\n unit_price_ttc: {self.get_unit_price_ttc()}' \
-               f'\n amount_vat: {self.get_amount_vat()}' \
-               f'\n line_price_ht: {self.get_line_price_ht()}' \
-               f'\n line_price_ttc : {self.get_line_price_ttc()}'
-
 
 if __name__ == '__main__':
     from models.category import Category

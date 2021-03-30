@@ -9,12 +9,6 @@ class Category(Model):
         self.description = description
         self.products = []
 
-    def __str__(self):
-        return f'\nCategory ' \
-               f'\n name: {self.name} ' \
-               f'\n description: {self.description}' \
-               f'\n Products: [ {self.display_products()} ]'
-
     def add_product(self, product):
         self.products.append(product)
 
@@ -28,4 +22,3 @@ class Category(Model):
         liste = liste.strip(',')
         return liste
 
-    pass

@@ -1,4 +1,5 @@
 from core.model import Model
+from utils.formater.formatings.oneline_formating import OnelineFormating
 
 
 class Address(Model):
@@ -13,8 +14,6 @@ class Address(Model):
         self.id_address = None
 
 
-    # def __str__(self):
-    #     return str(self.__dict__)
 if __name__ == "__main__":
     a = Address()
     a.set_formating(OnelineFormating())

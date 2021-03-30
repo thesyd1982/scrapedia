@@ -9,8 +9,6 @@ class ProfessionalClient(Client, Company):
         Client.__init__(self)
         Company.__init__(self, siret, company_name, address, contact)
 
-    def __str__(self):
-        return "ProfessionalClient" + Client.__str__(self) + Company.__str__(self)
 
     def order(self):
         pass

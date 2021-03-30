@@ -1,4 +1,3 @@
-from core.model import Model
 from models.person import Person
 
 

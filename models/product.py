@@ -17,15 +17,7 @@ class Product(Model):
         self.vat = vat
         category.add_product(self)
 
-    def __str__(self):
-        return f'\nProduct' \
-               f'\n reference: {self.reference}' \
-               f'\n gencode: {self.gencode}' \
-               f'\n name: {self.name}' \
-               f'\n price: {self.price}€' \
-               f'\n description: {self.description}' \
-               f'\n packaging: {self.packaging}' \
-               f'\n taux: {self.vat.value * 100}%'
+
 
     def set_category(self, category):
         category.add_product(self)
