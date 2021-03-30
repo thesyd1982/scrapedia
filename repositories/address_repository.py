@@ -7,7 +7,8 @@ class AddressRepository(IRepository):
 
     def __init__(self):
         self.addresses = [Address("34", "avenue de la bajatiere", "38100", "Grenoble", 'France'),
-                          Address("19", "avenue de la bijpoune", "38400", "SMH", 'France')]
+                          Address("19", "avenue de la bijpoune", "38400", "SMH", 'France'),
+                          Address("45", "pageneuge", "38400", "donto", 'France')]
 
     def count(self):
         return self.addresses.count()
