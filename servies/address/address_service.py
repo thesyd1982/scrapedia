@@ -46,6 +46,6 @@ if __name__ == '__main__':
     for i in ads.get_all():
         print(i.set_formating(OnelineFormating()))
 
-    a.code_postal = "8888"
+    a.code_postal = "38000"
     ads.update(a)
     print(f'\nprint the updated object: {a}')
