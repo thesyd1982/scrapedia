@@ -1,7 +1,11 @@
 .cache
 .idea
 .vscode
-venv
+.idea/
 __pycache__/
+servies/address/__pycache__/
+utils/formater/__pycache__/
+utils/formater/formatings/__pycache__/
 *.pyc
-
+/venv/
+pyenv.cfg
