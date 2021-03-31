@@ -33,6 +33,7 @@ pass
 if __name__ == '__main__':
     from utils.formater.formatings.oneline_formating import OnelineFormating
     from models.address import Address
+    import uuid
 
     repo = AddressRepository()
     ads = AddressService()
@@ -41,9 +42,10 @@ if __name__ == '__main__':
 
     a = Address()
     ads.add(a)
-    a.id_address = 'toto'
+
     for i in ads.get_all():
         print(i.set_formating(OnelineFormating()))
 
+    a.code_postal = "8888"
     ads.update(a)
-    print(a)
+    print(f'\nprint the updated object: {a}')

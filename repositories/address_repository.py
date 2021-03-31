@@ -1,4 +1,3 @@
-from core.i_crud_repository import ICrudRepository
 from core.i_repository import IRepository
 from models.address import Address
 
@@ -15,12 +14,19 @@ class AddressRepository(IRepository):
         pass
 
     def delete(self, entity):
+        if self.exists_by_id(entity.id_address):
+            self.addresses.remove(entity)
         pass
 
     def delete_all(self, entities):
+        for e in entities:
+            self.delete(e)
         pass
 
     def delete_by_id(self, id_entity):
+        entity = self.find_by_id(id_entity)
+        if entity:
+            self.addresses.remove(entity)
         pass
 
     def exists_by_id(self, id_entity):
@@ -28,6 +34,7 @@ class AddressRepository(IRepository):
         pass
 
     def find_all(self):
+        #TODO add the pagination
         return self.addresses
         pass
 
