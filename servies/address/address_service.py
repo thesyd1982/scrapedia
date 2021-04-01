@@ -41,6 +41,7 @@ if __name__ == '__main__':
     ads.set_repo(repo)
 
     a = Address()
+
     ads.add(a)
 
     for i in ads.get_all():
@@ -49,3 +50,8 @@ if __name__ == '__main__':
     a.code_postal = "38000"
     ads.update(a)
     print(f'\nprint the updated object: {a}')
+
+
+    # print(f'\n Introspection : {dir(Address)}')
+
+

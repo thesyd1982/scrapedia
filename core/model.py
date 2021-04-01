@@ -15,7 +15,6 @@ class Model:
     def get_obj(self):
         return self
 
-    def get_classname(self):
-        return str(type(self)).split('.')[1].replace("'>", '')
-
-
+    @classmethod
+    def get_classname(cls):
+        return cls.__name__
