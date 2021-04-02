@@ -1,10 +1,11 @@
 from repositories.address_repository import AddressRepository
-from servies.address.address_iservice import AddressIService
+from services.address.address_iservice import AddressIService
 
 
 class AddressService(AddressIService):
 
     def __init__(self):
+        """init the constructor"""
         super().__init__()
 
     def get_all(self):
@@ -50,7 +51,7 @@ if __name__ == '__main__':
     a.code_postal = "38000"
     ads.update(a)
     print(f'\nprint the updated object: {a}')
-
+    help(AddressService)
 
     # print(f'\n Introspection : {dir(Address)}')
 

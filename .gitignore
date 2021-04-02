@@ -3,7 +3,7 @@
 .vscode
 .idea/
 __pycache__/
-servies/address/__pycache__/
+services/address/__pycache__/
 utils/formater/__pycache__/
 utils/formater/formatings/__pycache__/
 *.pyc

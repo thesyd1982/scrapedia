@@ -15,6 +15,7 @@ class Model:
     def get_obj(self):
         return self
 
+
     @classmethod
     def get_classname(cls):
         return cls.__name__
