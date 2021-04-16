@@ -14,7 +14,7 @@ class AddressRepository(IRepository):
         pass
 
     def delete(self, entity):
-        if self.exists_by_id(entity.id_address):
+        if self.is_exists_by_id(entity.id_address):
             self.addresses.remove(entity)
         pass
 
@@ -29,7 +29,7 @@ class AddressRepository(IRepository):
             self.addresses.remove(entity)
         pass
 
-    def exists_by_id(self, id_entity):
+    def is_exists_by_id(self, id_entity):
         return self.find_by_id(id_entity) is not None
         pass
 
@@ -46,7 +46,7 @@ class AddressRepository(IRepository):
         pass
 
     def save(self, entity):
-        if not self.exists_by_id(entity.id_address):
+        if not self.is_exists_by_id(entity.id_address):
 
             self.addresses.append(entity)
         else:

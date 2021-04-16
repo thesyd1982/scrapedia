@@ -2,7 +2,7 @@ from abc import abstractmethod
 from core.i_service import IService
 
 
-class ClientIService(IService):
+class StockIService(IService):
 
     def __init__(self, irepo=None):
         self.repo = irepo

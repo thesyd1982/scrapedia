@@ -21,3 +21,19 @@ Total :6.74
 Solde Dû :6.74
 
 Notes
+
+créer la gestion de stock:-------------------------------------------------------------------
+- crud produit --> recherche des produits par categorie
+- geston d'alert --> seuil de stock --> utiliser l'orderService pour le rachat automatique
+- Valeur du stock --> calcule du Total en euro des prouits achetés --> calcule par categories ,
+    calcules des marges esperées
+- invetaire physique --> lecture des codes barres et clcule des stock de chaque produits
+--------------------------------------------------------------------------------------------
+OrderService:
+ -
+ -
+creer la gestion de facturation
+InvoicingService:
+ -
+ -
+

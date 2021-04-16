@@ -2,15 +2,23 @@ from core.model import Model
 
 
 class Provider(Model):
-    def __init__(self, name):
+    def __init__(self, name, description):
         super().__init__()
-        self.__name = name
+        self.name = name
+        self.description = description
+        self.products = []
+
+    def add_product(self, product):
+        self.products.append(product)
+
+    def remove_product(self, product):
+        self.products.remove(product)
 
     def get_name(self):
-        return self.__name
+        return self.name
 
     def set_name(self, name):
-        self.__name = name
+        self.name = name
         return self
 
 

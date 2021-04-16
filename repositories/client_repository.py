@@ -1,11 +1,11 @@
-from core.i_crud_repository import ICrudRepository
+from core.i_repository import IRepository
 from models.address_builder import AddressBuilder
 from models.individual import Individual
 from models.individual_client import IndividualClient
 from models.professional_client import ProfessionalClient
 
 
-class ClientRepository(ICrudRepository):
+class ClientRepository(IRepository):
 
     def __init__(self):
         self.clients = fixture()
@@ -22,10 +22,11 @@ class ClientRepository(ICrudRepository):
     def delete_by_id(self, id_entity):
         pass
 
-    def exists_by_id(self, id_entity):
+    def is_exists_by_id(self, id_entity):
         pass
 
     def find_all(self):
+        return self.clients
         pass
 
     def find_all_by_ids(self, entities_ids):
@@ -50,7 +51,6 @@ def fixture():
     ln = "salah"
     tel = "0606060606"
     mail = "salah.yacin.douakha@gmail.com"
-    contact = Individual(fn, ln, adresse)
 
     indiv1 = IndividualClient(fn, ln, adresse, mail, tel)
 
@@ -69,4 +69,4 @@ def fixture():
 
     indiv2 = IndividualClient(fn, ln, adresse, mail, tel)
 
-    return [indiv1, pro, indiv2]
+    return [indiv1,pro, indiv2]

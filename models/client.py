@@ -5,8 +5,7 @@ from core.model import Model
 class Client(ABC, Model):
     def __init__(self):
         Model.__init__(self)
-        self.id_client = None
+        self.invoices = []
+        self.avoirs = []
+        self.quotes = []
 
-    @abstractmethod
-    def order(self):
-        pass

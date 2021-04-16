@@ -1,6 +1,5 @@
 from core.model import Model
 from utils.formater.formatings.oneline_formating import OnelineFormating
-import uuid
 
 
 class Address(Model):
@@ -12,7 +11,6 @@ class Address(Model):
         self.ville = ville
         self.code_postal = code_postal
         self.pays = pays
-        self.id_address = uuid.uuid4().__str__()
 
 
 if __name__ == "__main__":

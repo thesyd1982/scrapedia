@@ -1,4 +1,3 @@
-from core.model import Model
 from models.client import Client
 from models.individual import Individual
 from models.address_builder import AddressBuilder
@@ -9,9 +8,6 @@ class IndividualClient(Client, Individual):
     def __init__(self, fname, lname, address, email=None, phone=None):
         Client.__init__(self)
         Individual.__init__(self, fname, lname, address, email, phone)
-
-    def order(self):
-        pass
 
 
 if __name__ == "__main__":

@@ -10,10 +10,6 @@ class ProfessionalClient(Client, Company):
         Company.__init__(self, siret, company_name, address, contact)
 
 
-    def order(self):
-        pass
-
-
 pass
 
 if __name__ == "__main__":

@@ -1,11 +1,15 @@
 from core.model import Model
 from utils.formater.formatings.oneline_formating import OnelineFormating
+from models.invoice_status import InvoiceStatus
 
 
 class Invoice(Model):
     def __init__(self, company, client):
         super().__init__()
         self.invoice_lines = []
+        self.payments = []
+
+        self.status = InvoiceStatus.UNPAYED.value
         self.company = company
         self.client = client
 
@@ -14,8 +18,6 @@ class Invoice(Model):
 
     def remove_line(self, line):
         self.invoice_lines.remove(line)
-
-
 
 
 pass
@@ -37,6 +39,7 @@ if __name__ == '__main__':
     il = InvoiceLine(banana, 2, 0.5).set_formating(OnelineFormating())
 
     print(il)
+
 
     adresse = AddressBuilder().build()
     fn = "Douakha"

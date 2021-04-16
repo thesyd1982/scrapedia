@@ -15,10 +15,10 @@ class Category(Model):
     def remove_product(self, product):
         self.products.remove(product)
 
-    def display_products(self):
-        liste = ''
-        for p in self.products:
-            liste = liste + p.reference + ','
-        liste = liste.strip(',')
-        return liste
+    # def display_products(self):
+    #     liste = ''
+    #     for p in self.products:
+    #         liste = liste + p.reference + ','
+    #     liste = liste.strip(',')
+    #     return liste
 

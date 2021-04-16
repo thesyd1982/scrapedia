@@ -7,19 +7,24 @@ from core.model import Model
 class Stock(Model):
 
     def __init__(self):
-        self.lignes_stock = {}
+        super().__init__()
+        self.stock_lignes = {}
 
-    def add_product(self, product, qty=0):
-        if product.reference in self.lignes_stock:
-            self.lignes_stock[product.reference] += qty
+    def add_stock_line(self, stock_line):
+
+        if stock_line.reference in self.stock_lignes:
+            self.stock_lignes[stock_line.reference].add_quantity(stock_line.quantity)
         else:
-            self.lignes_stock[product.reference] = qty
+            self.stock_lignes[stock_line.reference] = stock_line
 
-    def substract_product(self, product, qty=0):
-        if product.reference in self.lignes_stock:
-            if self.lignes_stock[product.reference] - qty >= 0:
-                self.lignes_stock[product.reference] -= qty
+    def sub_stock_line(self,  stock_line):
+        if stock_line.reference in self.stock_lignes:
+            quantity = self.stock_lignes[stock_line.reference].quantity
+            qty = stock_line.quantity
 
+            if quantity - qty >= 0:
+                quantity -= qty
+                self.stock_lignes[stock_line.reference].quantity = quantity
             else:
                 raise Exception('Quantité insuffisante')
         else:
@@ -27,14 +32,29 @@ class Stock(Model):
 
 
 s = Stock()
-cat_alim = Category('Fruits', Vat.TAUX_REDUIT)
-banana = Product("16Xb51", "1234567891234", "Banane plantin", 1, cat_alim, "sachet de 500g", "c'est de la bombe")
-try:
-    s.add_product(banana, 2)
-    s.add_product(banana, 4)
-    s.substract_product(banana, 10)
-except Exception as e:
-    print(e)
-print("Nation ")
+cat_alim = Category('Fruits',
+                    'Les Fruits des arbres ou des plantes')
+banana = Product("16Xb51",
+                 "Banane plantin",
+                 10,
+                 12,
+                 'Kg',
+                 'label rouge',
+                 "sachet",
+                 cat_alim,
+                 Vat.TAUX_REDUIT,
+                 "c'est de la bombe")
 
-print(s.__dict__)
+line = StockLine(banana.reference, 2, alert='warning')
+
+try:
+    s.add_stock_line(line)
+    s.add_stock_line(line)
+    s.sub_stock_line(line)
+
+    print(s.get_stock_line(banana))
+    # s.substract_stock_line(banana, 1)
+except Exception as e:
+    raise e
+
+print(s)
