@@ -43,17 +43,35 @@ pass
 
 if __name__ == '__main__':
     from utils.formater.formatings.oneline_formating import OnelineFormating
-    from models.product import Product
+    from models.unit import Unit
     from models.category import Category
     from models.vat import Vat
+    from models.product_builder import ProductBuilder
 
     repo = ProductRepository()
     ss = StockService()
 
     ss.set_repo(repo)
     cat = Category('Fruits', Vat.TAUX_REDUIT)
-    cat.set_formating(OnelineFormating(['products','id_product']))
-    p = Product("16Xb51", "Banane plantin", 10, "sachet de 500g", cat,Vat.TAUX_REDUIT, 30, "c'est de la bombe")
+    cat.set_formating(OnelineFormating(['products', 'id_product']))
+
+    cat = Category('Fruits', Vat.TAUX_REDUIT)
+
+    product_builder = ProductBuilder()
+    p = product_builder \
+        .set_name("Banane plantin") \
+        .set_reference("16Xb51") \
+        .set_category(cat) \
+        .set_vat(Vat.TAUX_REDUIT) \
+        .set_buying_price(10) \
+        .set_price(12) \
+        .set_packaging("sachet de 500g") \
+        .set_brand("banania") \
+        .set_gencode("978020137962") \
+        .set_unit(Unit.KG) \
+        .set_description("c'est de la bombe")\
+        .build()
+
     p.set_formating(OnelineFormating(['id_product', 'Category', 'products']))
 
     ss.add(p.set_formating(OnelineFormating(['id_product', 'Category', 'products'])))
